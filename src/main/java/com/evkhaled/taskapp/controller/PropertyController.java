@@ -8,6 +8,7 @@ import com.evkhaled.taskapp.entity.PropertyView;
 import com.evkhaled.taskapp.service.PropertySimilarityService;
 import com.evkhaled.taskapp.service.PropertyViewService;
 import jakarta.el.PropertyNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,14 +37,14 @@ public class PropertyController extends BaseController {
     }
 
     @GetMapping("/details/{propertyId}")
-    public ResponseEntity<PropertyDetailsDTO> getPropertyDetails(@PathVariable Long propertyId, @RequestParam(value = "user") String user) {
-        String propertyDetails = null;
+    public ResponseEntity<?> getPropertyDetails(@PathVariable Long propertyId, @RequestParam(value = "user") String user) {
+        String propertyDetails;
 
         try {
             //Getting the property details
             propertyDetails = propertyService.getPropertyDetails(propertyId);
         } catch (PropertyNotFoundException e) {
-//            return ResponseEntity.notFound(new ApiResponse("Property Not Found"));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("Property not found"));
         }
 
         //Getting relevant properties sorted
@@ -65,13 +66,15 @@ public class PropertyController extends BaseController {
         List<PropertySummaryDTO> allProperties = propertyService.getAllPropertiesWithoutDetails();
 
         for (PropertySummaryDTO otherProperty : allProperties) {
-            if (!otherProperty.getId().equals(propertyId)) {
-                List<PropertyView> otherPropertyViews = propertyViewService.getPropertyViewsByPropertyId(otherProperty.getId());
-                double similarity = propertySimilarityService.calculateSimilarityByViews(propertyViews, otherPropertyViews);
-                // Multiply similarity by 1000,000 and convert to integer for easier sorting
-                int scaledSimilarityAsKey = (int) (similarity * 1000000);
-                relevantPropertiesMap.put(scaledSimilarityAsKey, otherProperty);
+            if (otherProperty.getId().equals(propertyId)) { //Can't compare property to itself & no point returning it
+                continue;
             }
+            List<PropertyView> otherPropertyViews = propertyViewService.getPropertyViewsByPropertyId(otherProperty.getId());
+            double similarity = propertySimilarityService.calculateSimilarityByViews(propertyViews, otherPropertyViews);
+            // Multiply similarity by 1000,000 and convert to integer for easier sorting
+            int scaledSimilarityAsKey = (int) (similarity * 1000000);
+            relevantPropertiesMap.put(scaledSimilarityAsKey, otherProperty);
+
         }
 
         return new ArrayList<>(relevantPropertiesMap.values());
