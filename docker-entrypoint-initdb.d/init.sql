@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON evtask.* TO 'evtask'@'%' IDENTIFIED BY 'root';
+FLUSH PRIVILEGES;
