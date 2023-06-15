@@ -91,8 +91,6 @@ public class PropertyServiceTest {
         when(propertyRepository.findById(nonExistingPropertyId)).thenReturn(Optional.empty());
 
         // Perform the service method and assert the exception
-        assertThrows(PropertyNotFoundException.class, () -> {
-            propertyService.getPropertyDetails(nonExistingPropertyId);
-        });
+        assertThrows(PropertyNotFoundException.class, () -> propertyService.getPropertyDetails(nonExistingPropertyId));
     }
 }
