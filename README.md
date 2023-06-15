@@ -20,6 +20,14 @@ password: evtaskpassword
 ## Postman Documentation
 [Link to Postman Docs](https://documenter.getpostman.com/view/24544611/2s93sgVVWb).
 
+## Dependencies
+
+The EV Task App has the following dependencies:
+
+- Java JDK 17
+- Maven (for running with `mvn spring-boot:run`)
+- Docker (for running with Docker)
+
 ## Installation and Usage
 To run the EV Task App locally, follow these steps:
 
@@ -44,13 +52,8 @@ docker-compoe up
 7. Run the following command to build and run the application: `mvn spring-boot:run`
 8. The application should now be running on your localhost with port 8080
 
-## Dependencies
-
-The EV Task App has the following dependencies:
-
-- Java JDK 17
-- Maven (for running with `mvn spring-boot:run`)
-- Docker (for running with Docker)
+## Tests
+To run tests, simply run `mvn test`
 
 ## Issues and Limitations
 

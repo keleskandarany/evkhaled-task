@@ -19,7 +19,7 @@ public class AuthController extends BaseController {
         String email = loginRequest.getEmail();
         String password = loginRequest.getPassword();
 
-        // Static validation for emails within domain @evtask.com with password evtaskpassword
+        // Static validation for emails within domain @engelvoelkers.com with password evtaskpassword
         // Static auth of course just for the scope of the code challenge and not valid for a real-world app implementation
         if (!email.endsWith("@engelvoelkers.com") || !password.equals("evtaskpassword")) {
             ApiResponse response = new ApiResponse("Invalid credentials.");
