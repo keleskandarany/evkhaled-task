@@ -1,0 +1,32 @@
+[
+  {
+    "user": "test1@engelvoelkers.com",
+    "propertyId": 1,
+    "count": 1
+  },
+  {
+    "user": "test1@engelvoelkers.com",
+    "propertyId": 2,
+    "count": 1
+  },
+  {
+    "user": "test2@engelvoelkers.com",
+    "propertyId": 1,
+    "count": 1
+  },
+  {
+    "user": "test2@engelvoelkers.com",
+    "propertyId": 2,
+    "count": 2
+  },
+  {
+    "user": "test2@engelvoelkers.com",
+    "propertyId": 3,
+    "count": 1
+  },
+  {
+    "user": "test3@engelvoelkers.com",
+    "propertyId": 3,
+    "count": 3
+  }
+]

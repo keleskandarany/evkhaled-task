@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Frankfurt: Apartment City Center",
+    "details": "lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum",
+    "price": 550,
+    "image": "https://www.engelvoelkers.com/images/a05d1b97-eaf7-45c3-a049-62d3aeb13b2e/villa-namast%C3%A9"
+  },
+  {
+    "name": "Berlin: Furnished Apartment",
+    "details": "lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum",
+    "price": 750,
+    "image": "https://www.engelvoelkers.com/images/46e4c417-f8c8-482b-8c7d-bea09564c93a/moderne-wohnung-im-harburger-hafen?w=685&h=514"
+  },
+  {
+    "name": "Hamburg: House in Eimsbüttel",
+    "details": "lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum\n",
+    "price": 1200000,
+    "image": "https://www.engelvoelkers.com/images/276fc3ad-3df2-4db5-851b-3d7c3d5f8790/gepflegtes-einfamilienhaus-in-blicklage?w=576&h=432"
+  }
+]
